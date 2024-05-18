@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor with Save and Download</title>
+  <link rel="stylesheet" href="https://unpkg.com/grapesjs/dist/css/grapes.min.css">
+  <style>
+    /* Loading page*/
+    #loading-page {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: #333;
+    }
+
+    /* GrapesJS built-in button styling */
+    .gjs-btn {
+      background-color: #4b5f74;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 3px;
+      margin-right: 10px;
+    }
+
+    /* Hover and focus states for buttons */
+    .gjs-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .gjs-btn:focus {
+      outline: none;
+      box-shadow: 0 0 3px #0056b3;
+    }
+  </style>
+</head>
+<body>
+<div id="loading-page">Loading...</div>
+<div id="gjs">
+  <!-- Initial content can be placed here -->
+  <h1>Hello, GrapesJS!</h1>
+  <p>Start editing to see some magic happen :)</p>
+</div>
+
+<!--<button id="save-button">Save</button>
+<button id="download-button">Download</button>-->
+
+<!--<button id="toggle-button">Menu</button>-->
+<script src="https://unpkg.com/grapesjs"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
