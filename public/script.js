@@ -19,17 +19,19 @@ const editor = grapesjs.init({
         assets: []
     },
     plugins: [
-        'gjs-preset-webpage',
         'gjs-blocks-basic',
         'grapesjs-plugin-forms',
-        'grapesjs-navbar',
-        'grapesjs-lory-slider',
+        'grapesjs-component-countdown',
+        'grapesjs-plugin-export',
         'grapesjs-tabs',
         'grapesjs-custom-code',
-        'grapesjs-typed',
+        'grapesjs-touch',
+        'grapesjs-parser-postcss',
         'grapesjs-tooltip',
         'grapesjs-tui-image-editor',
-        'grapesjs-style-bg'
+        'grapesjs-typed',
+        'grapesjs-style-bg',
+        'grapesjs-preset-webpage',
     ],
     pluginsOpts: {
         'gjs-preset-webpage': {
@@ -38,9 +40,18 @@ const editor = grapesjs.init({
             countdownOpts: true,
             formsOpts: true,
             blocks: ['link-block', 'quote', 'text-basic']
-        }
+        },
+        'grapesjs-plugin-forms': {
+            blocks:['form', 'input', 'textarea', 'select', 'button', 'label', 'checkbox', 'radio']},
+        'grapesjs-component-countdown': { /* options */ },
+        'grapesjs-plugin-export': { /* options */ },
+        'grapesjs-tabs': {/*options*/},
+        'grapesjs-custom-code':{/*options*/}
     }
 });
+/*----------The code below has been discarded----------*/
+/*I do not know why I noticed all these so late...GrapeJS itself offers tones of blocks. All I need to do is to include the corresponding js file in index.html and enable the plugin*/
+/*
 // 添加文本块
 editor.BlockManager.add('text-block', {
     label: 'Text Block',
@@ -170,7 +181,7 @@ editor.BlockManager.add('triple-columns-block', {
     content: '<div class="triple-columns" style="display: flex;"><div class="column" style="flex: 1; padding: 10px;"><p>Column 1</p></div><div class="column" style="flex: 1; padding: 10px;"><p>Column 2</p></div><div class="column" style="flex: 1; padding: 10px;"><p>Column 3</p></div></div>',
     category: 'Basic',
 });
-
+*/
 window.addEventListener('load', () => {
     document.getElementById('loading-page').style.display = 'none';
 });
