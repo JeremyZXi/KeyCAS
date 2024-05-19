@@ -1,4 +1,8 @@
+
+
+# Acknowledgment 
 This is a web editing tool based on [GrapesJS](https://grapesjs.com/). 
+
 Copyright (c) 2017-current, Artur Arseniev
 All rights reserved.
 
@@ -12,3 +16,8 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# To-Do list
+- The user log in system and database(P.S. this is the priority as the entire stuff just won't work without this)
+- Sort out how the directory works with the log in system
+- Improve user experience by offering more blocks
+- 
