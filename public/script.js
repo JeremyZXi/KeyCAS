@@ -136,6 +136,20 @@ editor.BlockManager.add('form-block', {
     category: 'Forms',
 });
 
+// 添加双列块
+editor.BlockManager.add('double-columns-block', {
+    label: 'Double Columns',
+    content: '<div class="double-columns" style="display: flex;"><div class="column" style="flex: 1; padding: 10px;"><p>Column 1</p></div><div class="column" style="flex: 1; padding: 10px;"><p>Column 2</p></div></div>',
+    category: 'Basic',
+});
+// Triple Columns Block
+editor.BlockManager.add('triple-columns-block', {
+    label: 'Triple Columns',
+    content: '<div class="triple-columns" style="display: flex;"><div class="column" style="flex: 1; padding: 10px;"><p>Column 1</p></div><div class="column" style="flex: 1; padding: 10px;"><p>Column 2</p></div><div class="column" style="flex: 1; padding: 10px;"><p>Column 3</p></div></div>',
+    category: 'Basic',
+});
+*/
+//Custom block: header
 editor.BlockManager.add('header-banner', {
     label: 'Header Banner',
     attributes: { class: 'fa fa-header' }, // 可以使用 Font Awesome 图标
@@ -168,20 +182,6 @@ editor.BlockManager.add('header-banner', {
     },
     category: 'Basic',
 });
-
-// 添加双列块
-editor.BlockManager.add('double-columns-block', {
-    label: 'Double Columns',
-    content: '<div class="double-columns" style="display: flex;"><div class="column" style="flex: 1; padding: 10px;"><p>Column 1</p></div><div class="column" style="flex: 1; padding: 10px;"><p>Column 2</p></div></div>',
-    category: 'Basic',
-});
-// Triple Columns Block
-editor.BlockManager.add('triple-columns-block', {
-    label: 'Triple Columns',
-    content: '<div class="triple-columns" style="display: flex;"><div class="column" style="flex: 1; padding: 10px;"><p>Column 1</p></div><div class="column" style="flex: 1; padding: 10px;"><p>Column 2</p></div><div class="column" style="flex: 1; padding: 10px;"><p>Column 3</p></div></div>',
-    category: 'Basic',
-});
-*/
 window.addEventListener('load', () => {
     document.getElementById('loading-page').style.display = 'none';
 });
