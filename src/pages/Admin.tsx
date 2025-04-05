@@ -231,14 +231,14 @@ export default function Admin() {
 
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold">Project Management</h1>
+          <h1 className="text-3xl font-bold heading-text">Project Management</h1>
           <button
             onClick={async () => {
               await supabase.auth.signOut();
               toast.success('Signed out successfully');
               navigate('/admin/login');
             }}
-            className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+            className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 mono-text"
           >
             Sign Out
           </button>
@@ -385,7 +385,7 @@ export default function Admin() {
                   </a>
                 </div>
                 <div className="p-4">
-                  <h3 className="text-lg font-semibold mb-2">{project.name}</h3>
+                  <h3 className="text-lg font-semibold mb-2 heading-text">{project.name}</h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm mb-2 line-clamp-2">{project.description}</p>
                   
                   {/* Display technologies */}

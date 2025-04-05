@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
+import ThemeSwitch from '../UI/ThemeSwitch';
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
@@ -28,7 +29,7 @@ export default function Navbar() {
                     alt="Logo"
                     className="h-8 w-auto object-contain"
                 />
-                <span className="ml-2 text-xl font-bold">KeyCAS</span>
+                <span className="ml-2 text-xl font-bold mono-text">KeyCAS</span>
               </NavLink>
             </div>
 
@@ -39,7 +40,7 @@ export default function Navbar() {
                       key={item.path}
                       to={item.path}
                       className={({ isActive }) =>
-                          `px-3 py-2 rounded-md text-sm font-medium transition-colors
+                          `px-3 py-2 rounded-md text-sm font-medium transition-colors mono-text
                   ${isActive
                               ? 'bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300'
                               : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800'
@@ -49,12 +50,9 @@ export default function Navbar() {
                     {item.label}
                   </NavLink>
               ))}
-              <button
-                  onClick={toggleTheme}
-                  className="p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
-              >
-                {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-              </button>
+              <div className="p-1">
+                <ThemeSwitch />
+              </div>
             </div>
 
             {/* Mobile menu button */}
@@ -79,7 +77,7 @@ export default function Navbar() {
                         to={item.path}
                         onClick={() => setIsOpen(false)}
                         className={({ isActive }) =>
-                            `block px-3 py-2 rounded-md text-base font-medium
+                            `block px-3 py-2 rounded-md text-base font-medium mono-text
                   ${isActive
                                 ? 'bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300'
                                 : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800'
@@ -89,24 +87,10 @@ export default function Navbar() {
                       {item.label}
                     </NavLink>
                 ))}
-                <button
-                    onClick={toggleTheme}
-                    className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
-                >
-                  <div className="flex items-center">
-                    {theme === 'dark' ? (
-                        <>
-                          <Sun className="h-5 w-5 mr-2" />
-                          <span>Light Mode</span>
-                        </>
-                    ) : (
-                        <>
-                          <Moon className="h-5 w-5 mr-2" />
-                          <span>Dark Mode</span>
-                        </>
-                    )}
-                  </div>
-                </button>
+                <div className="px-3 py-2 flex items-center">
+                  <span className="mr-2 text-gray-700 dark:text-gray-200">Theme:</span>
+                  <ThemeSwitch />
+                </div>
               </div>
             </div>
         )}

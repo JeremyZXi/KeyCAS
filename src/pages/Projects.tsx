@@ -89,13 +89,22 @@ export default function Projects() {
 
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
-          <motion.h1 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-3xl font-bold mb-4 md:mb-0"
-          >
-            Our Projects
-          </motion.h1>
+          <motion.div className="mb-4 md:mb-0">
+            <motion.h1 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-3xl font-bold heading-text"
+            >
+              Our Projects
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
+              className="text-gray-600 dark:text-gray-400 mt-1 cursive-text text-xl"
+            >
+              Crafted with passion
+            </motion.p>
+          </motion.div>
 
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
@@ -147,7 +156,7 @@ export default function Projects() {
                     <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
                     <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                    <div className="ml-2 text-xs text-gray-600 dark:text-gray-400 truncate flex-grow overflow-hidden">
+                    <div className="ml-2 text-xs text-gray-600 dark:text-gray-400 truncate flex-grow overflow-hidden mono-text">
                       {(() => {
                         try {
                           const url = new URL(project.thumbnail);
@@ -206,7 +215,7 @@ export default function Projects() {
                           key={status}
                           className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium transition-colors duration-200 ${
                             isActive ? config.activeClass : config.inactiveClass
-                          }`}
+                          } mono-text`}
                         >
                           <Icon className="w-3.5 h-3.5" />
                           <span>{config.label}</span>
@@ -217,13 +226,13 @@ export default function Projects() {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+                  <h3 className="text-xl font-semibold mb-2 heading-text">{project.name}</h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {Array.isArray(project.technologies) && project.technologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm"
+                        className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm mono-text"
                       >
                         {tech}
                       </span>
