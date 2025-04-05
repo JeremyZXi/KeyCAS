@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* Iframe container states */
+.iframe-loaded .bg-opacity-30 {
+  opacity: 0;
+}
+
+.iframe-loaded:hover .bg-opacity-30 {
+  opacity: 0.3;
+}
+
+.iframe-error {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 48px;
+}
+
+/* Scale the content inside the iframe to fit better */
+iframe {
+  transform: scale(0.8);
+  transform-origin: 0 0;
+  width: 125% !important;
+  height: 125% !important;
+}
+
+/* Browser window styling */
+.browser-window {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+}
