@@ -14,7 +14,7 @@ const Card: React.FC<CardProps> = ({ name, about, email, socialLinks, profilePic
   return (
     <StyledWrapper>
       <div className="card">
-        <button className="mail">
+        <button className="mail" onClick={() => window.location.href = `mailto:${email}`}>
           <svg className="lucide lucide-mail" strokeLinejoin="round" strokeLinecap="round" strokeWidth={2} stroke="currentColor" fill="none" viewBox="0 0 24 24" height={24} width={24} xmlns="http://www.w3.org/2000/svg">
             <rect rx={2} y={4} x={2} height={16} width={20} />
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({ name, about, email, socialLinks, profilePic
                 </a>
               ))}
             </div>
-            <button className="button">Contact Me</button>
+            <button className="button" onClick={() => window.location.href = `mailto:${email}?subject=Contact from KeyCAS Website`}>Contact Me</button>
           </div>
         </div>
       </div>
