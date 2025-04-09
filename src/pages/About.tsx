@@ -1,37 +1,43 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import Card from '../../app/components/Card';
+import Card from '../components/Card.tsx';
 import styled from 'styled-components';
-import { FaLinkedin, FaGithub, FaDribbble, FaLink } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaDribbble, FaLink,FaTiktok } from 'react-icons/fa';
 import { Users } from 'lucide-react';
 
 export default function About() {
   const teamMembers = [
     {
       name: 'Xiyan Jeremy Zhang',
-      about: 'Lead Developer',
+      school: 'Keystone Academy',
+      role: 'Lead Developer',
+      about: '',
       email: 'xiyan.zhang@student.keystoneacademy.cn',
-      profilePicUrl: 'https://via.placeholder.com/150',
+      profilePicUrl: '/jeremy.jpg',
       socialLinks: [
-        { icon: <FaGithub />, url: 'https://github.com/JeremyZXi' },
-        { icon: <FaLink />, url: 'https://jeremyzxi.github.io/' },
+        { icon: <FaGithub />, url: 'https://github.com/JeremyZXi' }
       ],
     },
     {
       name: 'Eric Xinyu Gao',
-      about: 'Lead Developer',
+      school: 'Keystone Academy',
+      role: 'Lead Developer',
+      about: '',
       email: 'xinyu.gao@student.keystoneacademy.cn',
-      profilePicUrl: 'https://via.placeholder.com/150',
+      profilePicUrl: '/giao.jpg',
       socialLinks: [
         { icon: <FaGithub />, url: 'https://github.com/Er1cG1ao' },
+        { icon: <FaTiktok />, url: 'https://github.com/Er1cG1ao' }
       ],
     },
     {
       name: 'Mingqian Robert Liao',
-      about: 'Marketing & Communications',
+      school: 'Keystone Academy',
+      role: 'Marketing & Communications',
+      about: '',
       email: 'mingqian.liao@student.keystoneacademy.cn',
-      profilePicUrl: 'https://via.placeholder.com/150',
+      profilePicUrl: '/robert.jpg',
       socialLinks: [
         { icon: <FaLinkedin />, url: 'https://linkedin.com/in/janesmith' },
         { icon: <FaDribbble />, url: 'https://dribbble.com/janesmith' },
@@ -39,7 +45,9 @@ export default function About() {
     },
     {
       name: 'Guanxi Bobc Mei',
-      about: 'Co-developer',
+      school: 'Keystone Academy',
+      role: 'Co-developer',
+      about: '',
       email: 'guanxi.mei@student.keystoneacademy.cn',
       profilePicUrl: 'https://via.placeholder.com/150',
       socialLinks: [
@@ -47,6 +55,18 @@ export default function About() {
         { icon: <FaDribbble />, url: 'https://dribbble.com/janesmith' },
       ],
     },
+    {
+      name: 'Linxin Amy Pan',
+      school: 'Keystone Academy',
+      role: 'UI/UX Designer',
+      about: '',
+      email: 'guanxi.mei@student.keystoneacademy.cn',
+      profilePicUrl: 'https://via.placeholder.com/150',
+      socialLinks: [
+        { icon: <FaLinkedin />, url: 'https://linkedin.com/in/janesmith' },
+        { icon: <FaDribbble />, url: 'https://dribbble.com/janesmith' },
+      ],
+    }
   ];
 
   return (
@@ -133,6 +153,8 @@ export default function About() {
                     email={member.email}
                     profilePicUrl={member.profilePicUrl}
                     socialLinks={member.socialLinks}
+                    role={member.role}
+                    school={member.school}
                   />
                 </motion.div>
               ))}

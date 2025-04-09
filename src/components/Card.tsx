@@ -6,11 +6,13 @@ interface CardProps {
   name: string;
   about: string;
   email: string;
+  role: string;
+  school: string;
   socialLinks: { icon: JSX.Element; url: string }[];
   profilePicUrl: string;
 }
 
-const Card: React.FC<CardProps> = ({ name, about, email, socialLinks, profilePicUrl }) => {
+const Card: React.FC<CardProps> = ({ name, about, email, role, school, socialLinks, profilePicUrl }) => {
   return (
     <StyledWrapper>
       <div className="card">
@@ -26,6 +28,8 @@ const Card: React.FC<CardProps> = ({ name, about, email, socialLinks, profilePic
         <div className="bottom">
           <div className="content">
             <span className="name">{name}</span>
+            <span className="role">{role}</span>
+            <span className="school">{school}</span>
             <span className="about-me">{about}</span>
           </div>
           <div className="bottom-bottom">
@@ -116,6 +120,10 @@ const StyledWrapper = styled.div`
     left: 1.5rem;
     right: 1.5rem;
     height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 3.5rem;
   }
 
   .card .bottom .content .name {
@@ -123,13 +131,39 @@ const StyledWrapper = styled.div`
     font-size: 1.2rem;
     color: white;
     font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+
+  .card .bottom .content .role {
+    display: block;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.2rem;
+  }
+
+  .card .bottom .content .school {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
   }
 
   .card .bottom .content .about-me {
     display: block;
     font-size: 0.9rem;
     color: white;
-    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .card:hover .bottom .content .about-me {
+    opacity: 1;
+  }
+
+  .card:hover .bottom {
+    top: 20%;
+    border-radius: 80px 29px 29px 29px;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
   }
 
   .card .bottom .bottom-bottom {
@@ -181,12 +215,6 @@ const StyledWrapper = styled.div`
     border-top-left-radius: 55px;
   }
 
-  .card:hover .bottom {
-    top: 20%;
-    border-radius: 80px 29px 29px 29px;
-    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
-  }
-
   .card:hover .profile-pic {
     width: 100px;
     height: 100px;
@@ -201,14 +229,12 @@ const StyledWrapper = styled.div`
   }
 
   .card:hover .profile-pic:hover {
-    transform: scale(1.3);
     border-radius: 0px;
   }
 
   .card:hover .profile-pic img {
-    transform: scale(2.5);
-    -o-object-position: 0px 25px;
-    object-position: 0px 25px;
+    -o-object-position: center;
+    object-position: center;
     transition: all 0.5s ease-in-out 0.5s;
   }
 
