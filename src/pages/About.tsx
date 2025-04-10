@@ -49,7 +49,7 @@ export default function About() {
       role: 'Co-developer',
       about: '',
       email: 'guanxi.mei@student.keystoneacademy.cn',
-      profilePicUrl: 'https://via.placeholder.com/150',
+      profilePicUrl: 'bobc.jpg',
       socialLinks: [
         { icon: <FaLinkedin />, url: 'https://linkedin.com/in/janesmith' },
         { icon: <FaDribbble />, url: 'https://dribbble.com/janesmith' },
