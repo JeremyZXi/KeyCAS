@@ -3,7 +3,7 @@ name: Ping Supabase to Prevent Pausing
 on:
   schedule:
     - cron: '00 0 * * 1,2,3,4,5' # Runs at 22:10 UTC+8 AM every Monday and Wednesday
-
+  workflow_dispatch: 
 
 jobs:
   ping:
