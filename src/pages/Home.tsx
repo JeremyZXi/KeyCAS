@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <Helmet>
         <title>KeyCAS - Power your initiatives with technology</title>
-        <meta name="description" content="Professional tech support services for all your IT needs" />
+        <meta name="description" content="We’re a student-run organization dedicated to building tech that enhances life & student initiatives @Keystone Academy" />
       </Helmet>
       
       <motion.div
@@ -102,7 +102,7 @@ export default function Home() {
               >
                 <h2 className="cursive-text text-3xl mb-4 text-indigo-600 dark:text-indigo-400">Created by students, for students.</h2>
                 <p className="text-lg text-gray-700 dark:text-gray-300">
-                  We build websites that showcase your initiatives, amplify your message, and help you make an impact on campus and beyond.
+                  We’re a student-run organization dedicated to building tech that enhances life & student initiatives @Keystone Academy
                 </p>
               </motion.div>
               
